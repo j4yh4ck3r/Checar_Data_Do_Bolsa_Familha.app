@@ -8,9 +8,21 @@ const mes = {
     "dezembro": hoje.getDate() === 15 && hoje.getMonth() + 1 === 12
 }
 if (mes["agosto"] || mes["setembro"] || mes["outubro"] || mes["novembro"] || mes["dezembro"]) {
-    output.innerHTML = `<h1>Hoje dia ${hoje.getDate()} cai seu bolsa familiar.</h1>`;
+    output.innerHTML = `
+        <div><p><strong>${hoje.getFullYear()}</strong></p></div>
+        <h1>Hoje dia ${hoje.getDate()} cai seu bolsa familiar.</h1>
+        <h3>Dias prováveis de cada mês para receber</h3>
+        <div id="calendario">
+            <div class="dias"><p>agosto</p><p>21</p></div>
+            <div class="dias"><p>setembro</p><p>22</p></div>
+            <div class="dias"><p>outubro</p><p>22</p></div>
+            <div class="dias"><p>novembro</p><p>19</p></div>
+            <div class="dias"><p>dezembro</p><p>15</p></div>
+        </div>
+    `;
 } else {
     output.innerHTML = `
+        <div><p><strong>Ano ${hoje.getFullYear()}</strong></p></div>
         <h1>Hoje não cai seu bolsa familiar.</h1>
         <h3>Dias prováveis de cada mês para receber</h3>
         <div id="calendario">
